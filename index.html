@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anshuman Singh</title>
+  <meta name="description" content="Anshuman Singh, computer science student building secure software. Python, security engineering, and backend systems.">
+  <meta property="og:title" content="Anshuman Singh">
+  <meta property="og:description" content="Computer science student building secure software.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232A44C9'/%3E%3Ctext x='16' y='22.5' font-family='Arial,sans-serif' font-size='17' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F8FA;
+      --surface: #EEF0F4;
+      --ink: #16181D;
+      --muted: #5C6270;
+      --line: #DDE0E6;
+      --accent: #2A44C9;
+      --live: #1F8A4C;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14161B;
+        --surface: #1C1F26;
+        --ink: #E9EBF0;
+        --muted: #9AA0AD;
+        --line: #2A2E37;
+        --accent: #8FA2FF;
+        --live: #4CC983;
+        color-scheme: dark;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+    a:hover { color: var(--accent); text-decoration-color: currentColor; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+    .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    .top {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.75rem 0;
+      font-size: 0.95rem;
+    }
+    .top .name { font-weight: 600; text-decoration: none; }
+    .top nav { display: flex; gap: 1.5rem; }
+    .top nav a { color: var(--muted); text-decoration: none; }
+    .top nav a:hover { color: var(--ink); }
+
+    /* Hero */
+    .hero { padding: 5.5rem 0 5rem; }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6.4vw, 4.75rem);
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      margin: 0;
+      max-width: 15ch;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.2rem;
+      max-width: 34rem;
+      margin: 1.75rem 0 0;
+    }
+    .status {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      margin-top: 2.25rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--live);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--live) 18%, transparent);
+    }
+
+    /* Sections */
+    section {
+      display: grid;
+      grid-template-columns: 13rem 1fr;
+      gap: 2rem;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--line);
+    }
+    section > h2 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin: 0.3rem 0 0;
+    }
+    .content { max-width: 42rem; }
+
+    /* Featured project */
+    .feature h3 { font-size: 1.6rem; letter-spacing: -0.02em; font-weight: 500; margin: 0; line-height: 1.2; }
+    .feature .live {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .feature .live:hover { text-decoration: underline; }
+    .feature p { margin: 1.25rem 0 0; }
+    .feature ul { margin: 1.25rem 0 0; padding: 0; list-style: none; }
+    .feature li {
+      padding: 0.85rem 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .feature li strong { color: var(--ink); font-weight: 500; }
+    .stack { margin-top: 1.25rem; font-size: 0.92rem; color: var(--muted); }
+
+    /* Project list */
+    .item { padding: 0 0 2rem; }
+    .item + .item { padding-top: 2rem; border-top: 1px solid var(--line); }
+    .item:last-child { padding-bottom: 0; }
+    .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+    .item h3 { font-size: 1.15rem; font-weight: 500; margin: 0; }
+    .item .meta { font-size: 0.92rem; color: var(--muted); }
+    .item p { margin: 0.5rem 0 0; color: var(--muted); }
+
+    /* Skills */
+    dl { margin: 0; display: grid; grid-template-columns: 11rem 1fr; gap: 0.9rem 1.5rem; }
+    dt { font-weight: 500; }
+    dd { margin: 0; color: var(--muted); }
+
+    /* Contact */
+    .contact-lead { font-size: 1.6rem; letter-spacing: -0.02em; line-height: 1.25; margin: 0; font-weight: 500; }
+    .contact-lead a { text-decoration-color: var(--accent); }
+    .links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; margin-top: 1.5rem; }
+    .links a { color: var(--muted); }
+    .links a:hover { color: var(--accent); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 760px) {
+      .top nav { display: none; }
+      .hero { padding: 3rem 0 3.5rem; }
+      section { grid-template-columns: 1fr; gap: 1.25rem; padding: 2.75rem 0; }
+      dl { grid-template-columns: 1fr; gap: 0.2rem; }
+      dd { margin-bottom: 0.9rem; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero > * { animation: rise 0.7s cubic-bezier(.2,.7,.2,1) both; }
+      .hero > :nth-child(2) { animation-delay: 0.08s; }
+      .hero > :nth-child(3) { animation-delay: 0.16s; }
+      @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="top">
+      <a class="name" href="#">Anshuman Singh</a>
+      <nav aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1>I build software, then figure out how to break it.</h1>
+        <p>Computer science student at VIT-AP University, working where software engineering meets security. Mostly Python, backend systems, and vulnerability tooling.</p>
+        <div class="status"><span class="dot" aria-hidden="true"></span>Open to software engineering and security roles from December 2026</div>
+      </div>
+
+      <section id="work" aria-labelledby="work-h">
+        <h2 id="work-h">Featured project</h2>
+        <div class="content feature">
+          <h3>SentinelLite</h3>
+          <a class="live" href="https://sentinellite.com" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Live at sentinellite.com</a>
+          <p>A containerized security platform that audits a network, matches what it finds against known CVEs, ranks the risk, and suggests fixes. Built as my capstone project.</p>
+          <ul>
+            <li><strong>Async network auditing.</strong> Scans hosts and services concurrently in Python, cutting full-subnet audit time by 65% across 50+ hosts.</li>
+            <li><strong>Risk scoring.</strong> Maps discovered service versions to CVE data and ranks 200+ findings per scan using CVSS v3.1 and OWASP Top 10.</li>
+            <li><strong>Auto-remediation.</strong> An LLM module generates context-aware fix snippets, shown in a TypeScript dashboard.</li>
+            <li><strong>Microservices.</strong> Docker services behind an Nginx reverse proxy, so the whole platform starts with one command.</li>
+          </ul>
+          <div class="stack">Python, TypeScript, Docker, Nginx, CVSS v3.1, OWASP</div>
+        </div>
+      </section>
+
+      <section aria-labelledby="projects-h">
+        <h2 id="projects-h">Other projects</h2>
+        <div class="content">
+          <div class="item">
+            <div class="item-head">
+              <h3>Multi-storage learning management system</h3>
+              <span class="meta">2025</span>
+            </div>
+            <p>Swappable storage backends (plaintext, CSV, binary, MySQL) behind one interface, with role-based access control and input validation so unauthorized or malformed data never reaches storage.</p>
+            <div class="stack">Python, MySQL</div>
+          </div>
+          <div class="item">
+            <div class="item-head">
+              <h3>Automated network authentication tool</h3>
+              <span class="meta">2025</span>
+            </div>
+            <p>A desktop app that handles captive-portal login automatically. It adapts to changes in the portal page, watches for dropped sessions, and logs back in on its own.</p>
+            <div class="stack">Python, Selenium, Tkinter</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" aria-labelledby="exp-h">
+        <h2 id="exp-h">Experience</h2>
+        <div class="content">
+          <div class="item">
+            <div class="item-head">
+              <h3>Mastercard Cybersecurity Virtual Internship</h3>
+            </div>
+            <p>Analyst on the Security Awareness Team. Identified phishing threats, analyzed simulation results, and designed targeted training for high-risk teams.</p>
+          </div>
+          <div class="item">
+            <div class="item-head">
+              <h3>Deloitte Technology Consulting Virtual Internship</h3>
+            </div>
+            <p>Analyzed cloud architectures, evaluated system design trade-offs, and carried out OWASP-aligned security reviews.</p>
+          </div>
+          <div class="item">
+            <div class="item-head">
+              <h3>Workshops and community</h3>
+            </div>
+            <p>Organized and led hands-on Git and GitHub workshops, and helped host NVIDIA workshops on GPU programming. 100+ DSA problems solved on LeetCode and HackerRank.</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="skills-h">
+        <h2 id="skills-h">Skills</h2>
+        <div class="content">
+          <dl>
+            <dt>Languages</dt>
+            <dd>Python, Java, C, C++, TypeScript, JavaScript, SQL, HTML, CSS</dd>
+            <dt>Security</dt>
+            <dd>CVSS v3.1, OWASP Top 10, NIST, vulnerability assessment, network auditing</dd>
+            <dt>Data and infra</dt>
+            <dd>MySQL, MongoDB, Redis, Nginx, Docker</dd>
+            <dt>Tools</dt>
+            <dd>Git, Linux and Bash, Selenium, Postman, VS Code</dd>
+          </dl>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-h">
+        <h2 id="contact-h">Contact</h2>
+        <div class="content">
+          <p class="contact-lead">Have a role or project in mind? Email me at <a href="mailto:anshuman.singh.pr@gmail.com">anshuman.singh.pr@gmail.com</a></p>
+          <div class="links">
+            <a href="https://github.com/Anshuman-Singh-14" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com/in/anshuman-singh-0b70b2373" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://sentinellite.com" target="_blank" rel="noopener">SentinelLite</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>&copy; 2026 Anshuman Singh</footer>
+  </div>
+</body>
+</html>
